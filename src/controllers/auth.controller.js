@@ -1,9 +1,13 @@
 // @ts-nocheck
-export function register(req, res) {
- req.send('Register Controller')
+export const register=(req, res)=> {
+ res.send('Register Controller')
 }
 
-export function login(req,res) {
+
+//-----error------//
+export const login = (req,res) => {
+ throw(new Error('This is my way'))
+   console.log( 9 * "ok")
    res.json({
    msg : 'Login Controller',
    body : req.body
