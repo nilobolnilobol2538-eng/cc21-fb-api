@@ -1,13 +1,16 @@
+import createHttpError from "http-errors"
+
 // @ts-nocheck
 export const register=(req, res)=> {
  res.send('Register Controller')
 }
 
 
-//-----error------//
-export const login = (req,res) => {
- throw(new Error('This is my way'))
-   console.log( 9 * "ok")
+//-----login------//
+export const login = (req,res,next) => {
+  if(req.body.password === 'a1234'){
+    return next(createHttpError[400]('bad password'))
+  }
    res.json({
    msg : 'Login Controller',
    body : req.body
