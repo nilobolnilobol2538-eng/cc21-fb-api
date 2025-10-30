@@ -4,13 +4,23 @@ POST http://localhost:8899/api/auth/register HTTP/1.1
 content-type: application/json
 
 {
-  "identity" : "1111111111123",
-# "identity" : "someone@ggg.mail",
- "firstName" : "s",
+  #"identity" : "111111111114",
+ "identity" : "someone@ggg.mail",
+ "firstName" : "soooo",
  "lastName" : "codecamp",
  "password" : "123456",
- "confirmPassword" : "12345",
+ "confirmPassword" : "123456",
  "status" : "good"
 }
 ###
 
+ # Login api
+POST http://localhost:8899/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+  "identity" : "11111111111",
+ "password" : "123456"
+
+}
+###
